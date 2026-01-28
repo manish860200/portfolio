@@ -24,7 +24,9 @@ const Skills = () => {
                         </svg>
                     ),
                     color: "#00d9ff"
-                }
+                },
+                { name: "SQL", Icon: Database, color: "#336791" },
+                { name: "C++", Icon: Terminal, color: "#00599C" }
             ]
         },
         {
@@ -42,22 +44,22 @@ const Skills = () => {
             title: "Backend & Tools",
             skills: [
                 { name: "FastAPI", Icon: Zap, color: "#009688" },
+                { name: "PostgreSQL", Icon: Database, color: "#336791" },
+                { name: "MongoDB", Icon: Database, color: "#47A248" },
                 { name: "Docker", Icon: Box, color: "#2496ED" },
                 { name: "Git", Icon: GitBranch, color: "#F05032" },
-                { name: "GitHub", Icon: Github, color: "#ffffff" },
-                { name: "REST APIs", Icon: Settings, color: "#00C853" },
-                { name: "Postman", Icon: Terminal, color: "#FF6C37" }
+                { name: "GitHub", Icon: Github, color: "#ffffff" }
             ]
         },
         {
             title: "AI & Machine Learning",
             skills: [
                 { name: "LangChain", Icon: Layers, color: "#00d9ff" },
+                { name: "PyTorch", Icon: Code, color: "#EE4C2C" },
+                { name: "TensorFlow", Icon: Cpu, color: "#FF6F00" },
                 { name: "Hugging Face", Icon: MessageSquare, color: "#FFD21E" },
                 { name: "RAG", Icon: Search, color: "#00f0ff" },
-                { name: "LLMs", Icon: Cpu, color: "#ff00ff" },
-                { name: "FAISS", Icon: Database, color: "#00D4FF" },
-                { name: "OpenAI API", Icon: Terminal, color: "#10A37F" }
+                { name: "LLMs", Icon: Cpu, color: "#ff00ff" }
             ]
         },
         {

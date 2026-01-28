@@ -1,16 +1,53 @@
-# React + Vite
+# Modern AI & Python Portfolio 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-performance, dark-mode portfolio website designed for AI engineers and Python developers. Built with **React**, **Vite**, and **Framer Motion**, featuring a "superfast" architecture and seamless animations.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🏎️ **Superfast Performance**: Implemented Route-based Lazy Loading and Code Splitting for near-instant page transitions.
+- 🎨 **Minimalist Aesthetics**: Clean, background-free Lucide icons and pure SVGs with soft shadows.
+- 📧 **Contact Form**: Integrated with Web3Forms for immediate email notifications.
+- 📱 **Fully Responsive**: Optimized for desktop, tablet, and mobile viewing.
+- 🐍 **GenAI Focused**: High-tech landing page elements reflecting a specialization in LLMs and Python development.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React 19, Vite
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Hosting**: Vercel
+- **Forms**: Web3Forms
 
-## Expanding the ESLint configuration
+## 🚀 Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Check out the live version: **[manish-parmar-portfolio.vercel.app](https://manish-parmar-portfolio.vercel.app)**
+
+## 📦 Installation & Setup
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/manish860200/portfolio.git
+   cd portfolio
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Run locally**:
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**:
+   ```bash
+   npm run build
+   ```
+
+## 📧 Contact
+
+Feel free to reach out via the contact form on the website or email directly at [manish55555parmar@gmail.com](mailto:manish55555parmar@gmail.com).
+
+---
+Built with 🔥 by Manish
