@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap&text-rendering=optimizeLegibility');
+
+:root {
+  --font-heading: 'Orbitron', monospace;
+  --font-body: 'Space Grotesk', sans-serif;
+  --bg-color: #000000;
+  --text-primary: #ffffff;
+  --text-secondary: #888888;
+  --accent-primary: #00f0ff;
+  --accent-secondary: #ff00ff;
+  --accent-tertiary: #ffff00;
+  --button-bg: rgba(255, 255, 255, 0.05);
+  --button-border: rgba(255, 255, 255, 0.1);
+  --button-hover-bg: rgba(255, 255, 255, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Antigravity floating animation */
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.antigravity {
+  animation: floating 3s ease-in-out infinite;
+}
+
+.glass-card {
+  background: var(--button-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--button-border);
+  border-radius: 20px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, background, border-color;
+  transform: translateZ(0);
+}
+
+.glass-card:hover {
+  background: var(--button-hover-bg);
+  border-color: rgba(0, 240, 255, 0.5);
+  transform: translateY(-3px) translateZ(0);
+  box-shadow: 0 10px 30px rgba(0, 240, 255, 0.2);
+}
