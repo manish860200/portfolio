@@ -2,27 +2,32 @@ import React, { lazy, Suspense } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
-// Lazy load components for performance
-const Landing = lazy(() => import('./components/Landing'));
-const AboutMe = lazy(() => import('./components/AboutMe'));
-const Projects = lazy(() => import('./components/Projects'));
-const Skills = lazy(() => import('./components/Skills'));
-const Resume = lazy(() => import('./components/Resume'));
-const Contact = lazy(() => import('./components/Contact'));
+// Lazy load components
+const SinglePagePortfolio = lazy(() => import('./components/SinglePagePortfolio'));
 
-// Loading fallback
-const PageLoader = () => (
+// Loading component - matches black theme
+const Loading = () => (
   <div style={{
-    height: '100vh',
-    width: '100vw',
-    background: '#000',
     display: 'flex',
-    alignItems: 'center',
     justifyContent: 'center',
-    color: '#00F0FF',
-    fontFamily: 'monospace'
+    alignItems: 'center',
+    minHeight: '100vh',
+    background: '#000000',
+    color: 'white'
   }}>
-    <div className="antigravity">LOADING...</div>
+    <div style={{
+      width: '40px',
+      height: '40px',
+      border: '3px solid rgba(124, 58, 237, 0.2)',
+      borderTop: '3px solid #a855f7',
+      borderRadius: '50%',
+      animation: 'spin 1s linear infinite'
+    }} />
+    <style>{`
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    `}</style>
   </div>
 );
 
@@ -30,16 +35,12 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className="App">
-      <Suspense fallback={<PageLoader />}>
+    <div style={{ background: '#000000', minHeight: '100vh' }}>
+      <Suspense fallback={<Loading />}>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Landing />} />
-            <Route path="/about" element={<AboutMe />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/resume" element={<Resume />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/" element={<SinglePagePortfolio />} />
+            <Route path="*" element={<SinglePagePortfolio />} />
           </Routes>
         </AnimatePresence>
       </Suspense>

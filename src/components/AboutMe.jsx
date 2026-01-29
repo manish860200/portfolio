@@ -1,208 +1,205 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Phone, Mail, Linkedin, Github, MapPin, Briefcase } from 'lucide-react';
+import { ArrowLeft, Mail, Linkedin, Github, Briefcase, Award, Code } from 'lucide-react';
 
 const AboutMe = () => {
+    const containerVariants = {
+        initial: { opacity: 0 },
+        animate: {
+            opacity: 1,
+            transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+        },
+        exit: { opacity: 0 }
+    };
+
+    const itemVariants = {
+        initial: { opacity: 0, y: 20 },
+        animate: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
+        }
+    };
+
     return (
         <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={containerVariants}
             style={{
-                padding: '40px 20px',
-                maxWidth: '1200px',
+                padding: '120px 20px 80px',
+                maxWidth: '1100px',
                 margin: '0 auto',
                 minHeight: '100vh',
-                color: '#fff'
+                color: 'var(--text-primary)',
+                position: 'relative'
             }}
         >
-            <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#888', marginBottom: '30px' }}>
-                <ArrowLeft size={20} /> Back to Home
+            <div className="grid-bg" />
+
+            <Link
+                to="/"
+                className="nav-link"
+                style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    marginBottom: '48px'
+                }}
+            >
+                <ArrowLeft size={18} /> Back to Home
             </Link>
 
-            <h1 style={{
-                fontSize: '3rem',
-                marginBottom: '40px',
-                fontWeight: '400',
-                textAlign: 'center',
-                letterSpacing: '0.1em'
-            }}>
-                About Me
-            </h1>
-
-            {/* Profile Section */}
+            {/* Hero Section */}
             <div style={{
                 display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '40px',
-                marginBottom: '60px',
-                alignItems: 'start'
+                gridTemplateColumns: '1.5fr 1fr',
+                gap: '64px',
+                marginBottom: '80px',
+                alignItems: 'center'
             }}>
-                {/* Left Side - Info */}
-                <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2, duration: 0.4 }}
-                >
-                    <h2 style={{
-                        fontSize: '2rem',
-                        marginBottom: '20px',
-                        fontFamily: 'var(--font-heading)',
-                        letterSpacing: '0.08em'
+                <motion.div variants={itemVariants}>
+                    <h1 style={{
+                        fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+                        fontWeight: '800',
+                        marginBottom: '24px',
+                        letterSpacing: '-0.04em'
                     }}>
-                        Manish Parmar
-                    </h2>
+                        About <span className="gradient-text">Manish</span>
+                    </h1>
 
                     <p style={{
-                        fontSize: '1rem',
+                        fontSize: '1.2rem',
                         lineHeight: '1.8',
-                        color: '#ccc',
-                        marginBottom: '30px'
+                        color: 'var(--text-secondary)',
+                        marginBottom: '32px'
                     }}>
-                        Passionate Software Engineer with expertise in Generative AI, Large Language Models, and end-to-end AI system development. Currently focused on building reliable, modular, and production-style AI systems using Python, LangChain, and RAG techniques.
+                        Passionate Software Engineer with expertise in <span style={{ color: 'var(--accent-primary)', fontWeight: '600' }}>Generative AI</span>,
+                        Large Language Models, and end-to-end AI system development. Currently focused on building reliable,
+                        modular, and production-style AI systems using Python, LangChain, and RAG techniques.
                     </p>
 
-                    {/* Contact Info */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-                        <a href="mailto:manish55555parmar@gmail.com" style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '10px',
-                            color: '#00d9ff',
-                            fontSize: '0.95rem'
-                        }}>
-                            <Mail size={18} />
-                            <span>manish55555parmar@gmail.com</span>
-                        </a>
-
-                        <a href="https://linkedin.com/in/manish-parmar-8a30b33a6" target="_blank" style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '10px',
-                            color: '#00d9ff',
-                            fontSize: '0.95rem'
-                        }}>
-                            <Linkedin size={18} />
-                            <span>LinkedIn</span>
-                        </a>
-
-                        <a href="https://github.com/manish860200" target="_blank" style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '10px',
-                            color: '#00d9ff',
-                            fontSize: '0.95rem'
-                        }}>
-                            <Github size={18} />
-                            <span>Github/manish-p01</span>
-                        </a>
+                    {/* Social Links */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                        {[
+                            { icon: Mail, label: 'manish55555parmar@gmail.com', href: 'mailto:manish55555parmar@gmail.com' },
+                            { icon: Linkedin, label: 'LinkedIn Profile', href: 'https://linkedin.com/in/manish-parmar-8a30b33a6' },
+                            { icon: Github, label: 'Github/manish860200', href: 'https://github.com/manish860200' }
+                        ].map((item, idx) => (
+                            <a
+                                key={idx}
+                                href={item.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="glass-card"
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '16px',
+                                    padding: '16px 20px',
+                                    fontSize: '0.95rem',
+                                    transition: 'all 0.3s ease'
+                                }}
+                            >
+                                <div style={{
+                                    width: '40px',
+                                    height: '40px',
+                                    background: 'var(--gradient-primary)',
+                                    borderRadius: '10px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center'
+                                }}>
+                                    <item.icon size={20} strokeWidth={2} />
+                                </div>
+                                <span style={{ fontWeight: '500' }}>{item.label}</span>
+                            </a>
+                        ))}
                     </div>
                 </motion.div>
 
-                {/* Right Side - Profile Image */}
+                {/* Profile Image */}
                 <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.3, duration: 0.4 }}
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center'
-                    }}
+                    variants={itemVariants}
+                    style={{ position: 'relative' }}
                 >
-                    <img
-                        src="/profile.jpg"
-                        alt="Manish Parmar"
-                        style={{
-                            width: '280px',
-                            height: '280px',
-                            borderRadius: '50%',
-                            objectFit: 'cover',
-                            border: '4px solid rgba(0, 217, 255, 0.5)',
-                            boxShadow: '0 0 40px rgba(0, 217, 255, 0.3)'
-                        }}
-                    />
+                    <div className="glow" style={{
+                        position: 'relative',
+                        borderRadius: '24px',
+                        overflow: 'hidden',
+                        border: '2px solid var(--border-medium)',
+                        aspectRatio: '1'
+                    }}>
+                        <img
+                            src="/profile.jpg"
+                            alt="Manish Parmar"
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover'
+                            }}
+                        />
+                    </div>
                 </motion.div>
             </div>
 
-            {/* Work Experience Section */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.4 }}
-            >
+            {/* Experience Section */}
+            <motion.div variants={itemVariants}>
                 <h2 style={{
-                    fontSize: '2rem',
-                    marginBottom: '30px',
-                    fontFamily: 'var(--font-heading)',
-                    letterSpacing: '0.08em'
+                    fontSize: '2.5rem',
+                    marginBottom: '32px',
+                    fontWeight: '700'
                 }}>
-                    Work Experience
+                    Experience
                 </h2>
 
-                <div style={{
-                    background: 'rgba(255, 255, 255, 0.03)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                    borderRadius: '15px',
-                    padding: '30px',
-                    backdropFilter: 'blur(10px)'
-                }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '15px' }}>
+                <div className="glass-card" style={{ padding: '40px', marginBottom: '32px' }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '24px', marginBottom: '24px' }}>
                         <div style={{
-                            width: '50px',
-                            height: '50px',
-                            background: 'linear-gradient(135deg, #00d9ff, #0099ff)',
-                            borderRadius: '10px',
+                            width: '56px',
+                            height: '56px',
+                            background: 'var(--gradient-primary)',
+                            borderRadius: '14px',
                             display: 'flex',
                             alignItems: 'center',
-                            justifyContent: 'center'
+                            justifyContent: 'center',
+                            flexShrink: 0,
+                            boxShadow: 'var(--glow-primary)'
                         }}>
-                            <Briefcase size={24} />
+                            <Briefcase size={28} strokeWidth={2} />
                         </div>
                         <div>
-                            <h3 style={{
-                                fontSize: '1.3rem',
-                                fontFamily: 'var(--font-heading)',
-                                letterSpacing: '0.05em'
-                            }}>
+                            <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '6px' }}>
                                 Software Engineer
                             </h3>
-                            <p style={{ color: '#888', fontSize: '0.9rem' }}>Self-Driven Projects</p>
+                            <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', marginBottom: '16px' }}>
+                                Self-Driven Projects • Jan 2026 – Present
+                            </p>
                         </div>
-                    </div>
-
-                    <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '15px',
-                        marginBottom: '20px',
-                        fontSize: '0.9rem',
-                        color: '#aaa'
-                    }}>
-                        <span>📅 January 2026 – Present</span>
-                        <span>🌐 Remote</span>
                     </div>
 
                     <p style={{
                         lineHeight: '1.8',
-                        color: '#ccc',
-                        marginBottom: '20px'
+                        color: 'var(--text-secondary)',
+                        marginBottom: '24px',
+                        fontSize: '1.05rem'
                     }}>
-                        Working on containerization with Docker, AI systems, and various development projects to build scalable cloud infrastructure and automate deployment pipelines.
+                        Working on containerization with Docker, AI systems, and various development projects to build
+                        scalable cloud infrastructure and automate deployment pipelines. Focused on creating production-ready
+                        AI applications using modern frameworks and best practices.
                     </p>
 
-                    {/* Tech Stack Tags */}
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                        {['Python', 'LangChain', 'RAG', 'Docker', 'AI Systems', 'LLMs'].map((tech, i) => (
-                            <span key={i} style={{
-                                padding: '5px 12px',
-                                background: 'rgba(0, 217, 255, 0.1)',
-                                border: '1px solid rgba(0, 217, 255, 0.3)',
-                                borderRadius: '15px',
-                                fontSize: '0.8rem',
-                                color: '#00d9ff'
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                        {['Python', 'LangChain', 'RAG', 'Docker', 'AI Systems', 'LLMs', 'FastAPI', 'React'].map((tech, i) => (
+                            <span key={i} className="badge" style={{
+                                padding: '8px 16px',
+                                background: 'rgba(99, 102, 241, 0.1)',
+                                border: '1px solid rgba(99, 102, 241, 0.3)',
+                                borderRadius: '10px',
+                                fontSize: '0.85rem',
+                                fontWeight: '500'
                             }}>
                                 {tech}
                             </span>
@@ -210,6 +207,82 @@ const AboutMe = () => {
                     </div>
                 </div>
             </motion.div>
+
+            {/* Highlights */}
+            <motion.div variants={itemVariants}>
+                <h2 style={{
+                    fontSize: '2.5rem',
+                    marginBottom: '32px',
+                    fontWeight: '700'
+                }}>
+                    Highlights
+                </h2>
+
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                    gap: '24px'
+                }}>
+                    {[
+                        {
+                            icon: Code,
+                            title: 'AI Development',
+                            description: 'Expert in building production-grade AI systems with LLMs and RAG',
+                            gradient: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)'
+                        },
+                        {
+                            icon: Award,
+                            title: 'Best Practices',
+                            description: 'Following industry standards for code quality and architecture',
+                            gradient: 'linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)'
+                        },
+                        {
+                            icon: Briefcase,
+                            title: 'Full Stack',
+                            description: 'Proficient in both frontend and backend development',
+                            gradient: 'linear-gradient(135deg, #10b981 0%, #34d399 100%)'
+                        }
+                    ].map((item, idx) => (
+                        <div key={idx} className="glass-card" style={{ padding: '32px' }}>
+                            <div style={{
+                                width: '48px',
+                                height: '48px',
+                                background: item.gradient,
+                                borderRadius: '12px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                marginBottom: '20px',
+                                boxShadow: '0 4px 16px rgba(99, 102, 241, 0.2)'
+                            }}>
+                                <item.icon size={24} strokeWidth={2} />
+                            </div>
+                            <h3 style={{
+                                fontSize: '1.3rem',
+                                fontWeight: '700',
+                                marginBottom: '12px'
+                            }}>
+                                {item.title}
+                            </h3>
+                            <p style={{
+                                color: 'var(--text-secondary)',
+                                lineHeight: '1.6',
+                                fontSize: '0.95rem'
+                            }}>
+                                {item.description}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+            </motion.div>
+
+            <style>{`
+                @media (max-width: 768px) {
+                    div[style*="gridTemplateColumns: 1.5fr 1fr"] {
+                        grid-template-columns: 1fr !important;
+                    }
+                }
+            `}</style>
         </motion.div>
     );
 };
