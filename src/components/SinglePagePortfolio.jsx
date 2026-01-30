@@ -49,25 +49,38 @@ const SinglePagePortfolio = () => {
         setIsSubmitting(true);
         setStatus({ type: '', message: '' });
 
+        // Web3Forms Access Key
+        const accessKey = "ba185174-2740-4c13-b805-083f14f00bfd";
+
         try {
-            const response = await fetch('/api/contact', {
+            const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    access_key: accessKey,
+                    name: formData.name,
+                    email: formData.email,
+                    subject: formData.subject || "New Portfolio Contact",
+                    message: formData.message,
+                    from_name: "Manish Portfolio"
+                }),
             });
 
             const result = await response.json();
 
             if (response.ok && result.success) {
-                setStatus({ type: 'success', message: result.message });
+                setStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
                 setFormData({ name: '', email: '', subject: '', message: '' });
             } else {
+                console.error('Web3Forms Error:', result);
                 setStatus({ type: 'error', message: result.message || 'Something went wrong. Please try again.' });
             }
         } catch (error) {
-            setStatus({ type: 'error', message: 'Failed to connect to the backend. Please try again later.' });
+            console.error('Submit Error:', error);
+            setStatus({ type: 'error', message: 'Failed to send message. Please check your connection or try again later.' });
         } finally {
             setIsSubmitting(false);
             setTimeout(() => setStatus({ type: '', message: '' }), 6000);
