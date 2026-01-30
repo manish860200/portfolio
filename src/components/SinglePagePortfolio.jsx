@@ -546,34 +546,62 @@ const SinglePagePortfolio = () => {
                     <h2 className="section-title">Featured <span className="gradient-text">Projects</span></h2>
                     <p className="section-subtitle">Some of my recent work</p>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
                         {projects.map((project, idx) => (
                             <motion.div key={idx} className="glass-card" variants={cardHoverVariants} initial="rest" whileHover="hover" whileTap="tap"
-                                style={{ padding: '28px' }}>
-                                <motion.div className="icon-wrapper" whileHover={{ rotate: 10, scale: 1.15 }}
-                                    style={{ width: '52px', height: '52px', background: project.gradient, marginBottom: '20px' }}>
-                                    <project.icon size={24} />
-                                </motion.div>
-                                <h3 style={{ fontSize: '1.05rem', fontWeight: '600', marginBottom: '10px' }}>{project.title}</h3>
-                                <p style={{ color: '#a0a0a0', marginBottom: '18px', lineHeight: '1.7', fontSize: '0.88rem' }}>{project.description}</p>
-                                <div style={{
+                                style={{
+                                    padding: '40px',
                                     display: 'flex',
                                     flexWrap: 'wrap',
-                                    gap: '8px',
-                                    marginBottom: '20px',
-                                    background: 'rgba(255, 255, 255, 0.03)',
-                                    padding: '12px',
-                                    borderRadius: '12px',
-                                    border: '1px solid rgba(255, 255, 255, 0.05)'
+                                    gap: '40px',
+                                    alignItems: 'flex-start',
+                                    textAlign: 'left'
                                 }}>
+                                {/* Left Side: Icon & Info */}
+                                <div style={{ flex: '1', minWidth: '300px' }}>
+                                    <motion.div className="icon-wrapper" whileHover={{ rotate: 10, scale: 1.15 }}
+                                        style={{ width: '60px', height: '60px', background: project.gradient, marginBottom: '24px' }}>
+                                        <project.icon size={28} />
+                                    </motion.div>
+                                    <h3 style={{ fontSize: '1.4rem', fontWeight: '700', marginBottom: '16px', letterSpacing: '-0.02em' }}>{project.title}</h3>
+                                    <p style={{ color: '#a0a0a0', marginBottom: '28px', lineHeight: '1.8', fontSize: '1rem', maxWidth: '600px' }}>{project.description}</p>
+
+                                    <motion.a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-secondary ripple"
+                                        whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} style={{ width: 'fit-content', fontSize: '0.9rem', padding: '12px 24px' }}>
+                                        <Github size={18} /> View Case Study
+                                    </motion.a>
+                                </div>
+
+                                {/* Right Side: Tech List (Vertical Box) */}
+                                <div style={{
+                                    minWidth: '200px',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: '12px',
+                                    background: 'rgba(255, 255, 255, 0.02)',
+                                    padding: '24px',
+                                    borderRadius: '16px',
+                                    border: '1px solid rgba(255, 255, 255, 0.05)',
+                                    alignSelf: 'stretch'
+                                }}>
+                                    <span style={{ fontSize: '0.75rem', color: '#666', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '8px' }}>Technologies Used</span>
                                     {project.tech.map((tech, i) => (
-                                        <motion.span key={i} className="badge" whileHover={{ scale: 1.05 }} style={{ fontSize: '0.65rem', padding: '5px 10px', whiteSpace: 'nowrap' }}>{tech}</motion.span>
+                                        <motion.div key={i}
+                                            whileHover={{ x: 5, color: '#a855f7' }}
+                                            style={{
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: '10px',
+                                                fontSize: '0.85rem',
+                                                color: '#a0a0a0',
+                                                padding: '4px 0',
+                                                borderBottom: i === project.tech.length - 1 ? 'none' : '1px solid rgba(255,255,255,0.03)'
+                                            }}>
+                                            <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#a855f7' }} />
+                                            {tech}
+                                        </motion.div>
                                     ))}
                                 </div>
-                                <motion.a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-secondary ripple"
-                                    whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} style={{ width: '100%', fontSize: '0.8rem', padding: '12px' }}>
-                                    <Github size={16} /> View on GitHub
-                                </motion.a>
                             </motion.div>
                         ))}
                     </div>
