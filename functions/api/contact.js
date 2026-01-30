@@ -38,7 +38,7 @@ export async function onRequestPost({ request }) {
         if (result.success) {
             return new Response(JSON.stringify({
                 success: true,
-                message: "Thank you! Your message has been sent successfully to Manish's inbox."
+                message: "Success! Message sent to manish.prm86@gmail.com inbox."
             }), {
                 status: 200,
                 headers: { "Content-Type": "application/json" }
