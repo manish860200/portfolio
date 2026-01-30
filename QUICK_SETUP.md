@@ -55,7 +55,7 @@ Visit `http://localhost:5173/contact` and submit a test message!
    - Directory? **./  (press Enter)**
    - Override settings? **No**
 
-4. **Done!** You'll get a URL like: `https://manish.manish55555parmar.workers.dev/`
+4. **Done!** You'll get a URL like: `https://manish.prm86.workers.dev/`
 
 ### Option B: Netlify
 

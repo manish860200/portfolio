@@ -25,7 +25,7 @@ This portfolio is built with a custom design philosophy inspired by weightlessne
 
 ## 🚀 Experience it Live
 
-**[manish.manish55555parmar.workers.dev](https://manish.manish55555parmar.workers.dev/)**
+**[manish.prm86.workers.dev](https://manish.prm86.workers.dev/)**
 
 ## 🛠️ Local Development
 
@@ -48,7 +48,7 @@ This portfolio is built with a custom design philosophy inspired by weightlessne
 ## 📧 Connectivity
 
 Connect with me through the secure contact form on the website or via:
-- **Email**: [manish55555parmar@gmail.com](mailto:manish55555parmar@gmail.com)
+- **Email**: [manish.prm86@gmail.com](mailto:manish.prm86@gmail.com)
 - **LinkedIn**: [Profile](https://linkedin.com/in/manish-parmar-8a30b33a6)
 
 ---

@@ -41,7 +41,7 @@ Your portfolio is ready to deploy! Follow these steps to get it online and acces
    - Import your portfolio repository
    - Vercel will auto-detect Vite settings
    - Click "Deploy"
-   - Done! You'll get a URL like `https://manish.manish55555parmar.workers.dev/`
+   - Done! You'll get a URL like `https://manish.prm86.workers.dev/`
 
 ### Option B: Deploy via Vercel CLI (Faster)
 
@@ -66,7 +66,7 @@ Follow the prompts, and you're live!
    - Select your repository
    - Build settings are already configured in `netlify.toml`
    - Click "Deploy"
-   - Done! You'll get a URL like `https://manish.manish55555parmar.workers.dev/`
+   - Done! You'll get a URL like `https://manish.prm86.workers.dev/`
 
 ---
 
