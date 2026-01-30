@@ -433,40 +433,58 @@ const SinglePagePortfolio = () => {
                         </div>
 
                         {/* Image Content */}
-                        <div style={{ flex: '1', minWidth: '320px', position: 'relative', display: 'flex', justifyContent: 'center' }}>
-                            {/* Decorative Floating Frame */}
+                        <div style={{ flex: '1', minWidth: '320px', position: 'relative', display: 'flex', justifyContent: 'center', perspective: '1000px' }}>
+                            {/* Animated Glowing Aura */}
                             <motion.div
                                 animate={{
-                                    y: [0, -10, 0],
-                                    rotate: [0, 2, 0]
+                                    scale: [1, 1.05, 1],
+                                    opacity: [0.3, 0.6, 0.3]
                                 }}
-                                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                                transition={{ duration: 4, repeat: Infinity }}
                                 style={{
-                                    position: 'absolute', top: '20px', right: '40px', width: '80%', height: '90%',
-                                    border: '1px solid rgba(124, 58, 237, 0.3)', borderRadius: '30px',
-                                    zIndex: 0, pointerEvents: 'none'
+                                    position: 'absolute', inset: '-20px',
+                                    background: 'radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 70%)',
+                                    borderRadius: '50%', zIndex: 0
                                 }}
                             />
 
-                            <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.8 }}
+                                whileHover={{
+                                    rotateY: 10,
+                                    rotateX: -5,
+                                    scale: 1.05,
+                                    boxShadow: '0 40px 80px -12px rgba(124, 58, 237, 0.4)'
+                                }}
                                 style={{
-                                    position: 'relative', width: '100%', maxWidth: '380px', aspectRatio: '0.75/1',
-                                    borderRadius: '32px', overflow: 'hidden', zIndex: 1,
-                                    background: 'linear-gradient(135deg, rgba(124, 58, 237, 0.1), transparent)',
-                                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
-                                    border: '1px solid rgba(255, 255, 255, 0.05)'
+                                    position: 'relative', width: '100%', maxWidth: '340px', aspectRatio: '0.65/1',
+                                    borderRadius: '24px', overflow: 'hidden', zIndex: 1,
+                                    background: 'var(--bg-card)',
+                                    border: '1px solid rgba(124, 58, 237, 0.3)',
+                                    transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
                                 }}>
                                 <motion.img src="/profile.jpg" alt="Manish Parmar"
-                                    whileHover={{ scale: 1.05 }}
-                                    transition={{ duration: 0.4 }}
-                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%' }}
                                 />
-                                {/* Bottom Overlay for Depth */}
+                                {/* Bottom Mask for Depth */}
                                 <div style={{
-                                    position: 'absolute', bottom: 0, left: 0, right: 0, height: '40%',
-                                    background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent)',
+                                    position: 'absolute', inset: 0,
+                                    background: 'linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.8) 100%)',
                                     pointerEvents: 'none'
                                 }} />
+                                {/* Shine Flare Effect */}
+                                <motion.div
+                                    initial={{ x: '-150%', skewX: -20 }}
+                                    whileHover={{ x: '150%' }}
+                                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                                    style={{
+                                        position: 'absolute', inset: 0,
+                                        background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)',
+                                        zIndex: 2, pointerEvents: 'none'
+                                    }}
+                                />
                             </motion.div>
 
                             {/* Floating Icons */}
