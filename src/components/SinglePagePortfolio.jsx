@@ -357,68 +357,83 @@ const SinglePagePortfolio = () => {
             </section>
 
             {/* About Section */}
-            <section id="about" className="section" style={{ background: 'rgba(10, 10, 10, 0.8)' }}>
-                <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-100px' }}
-                    transition={{ duration: 0.8 }} style={{ maxWidth: '1000px', margin: '0 auto' }}>
-                    <h2 className="section-title">About <span className="gradient-text">Me</span></h2>
-                    <p className="section-subtitle">Passionate about building intelligent systems</p>
+            <section id="about" className="section" style={{ background: 'rgba(5, 5, 5, 1)', position: 'relative', overflow: 'hidden', padding: '100px 0' }}>
+                <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                    transition={{ duration: 0.8 }} style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '28px' }}>
-                        <motion.div className="glass-card" variants={cardHoverVariants} initial="rest" whileHover="hover" whileTap="tap"
-                            style={{ padding: '0', overflow: 'hidden', aspectRatio: '1/1', position: 'relative' }}>
-                            <img src="/profile.jpg" alt="Manish Parmar"
-                                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                            />
-                            <div style={{
-                                position: 'absolute', bottom: 0, left: 0, right: 0,
-                                padding: '16px', background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
-                                color: 'white'
-                            }}>
-                                <p style={{ fontSize: '0.8rem', fontWeight: '500', margin: 0 }}>Manish Parmar</p>
-                                <p style={{ fontSize: '0.7rem', opacity: 0.8, margin: 0 }}>Gen AI Engineer</p>
-                            </div>
-                        </motion.div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '60px' }}>
+                        {/* Text Content */}
+                        <div style={{ flex: '1', minWidth: '320px' }}>
+                            <motion.p initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}
+                                style={{ color: '#a0a0a0', fontSize: '1.1rem', marginBottom: '12px', fontWeight: '500' }}>
+                                Myself
+                            </motion.p>
 
-                        <motion.div className="glass-card" variants={cardHoverVariants} initial="rest" whileHover="hover" whileTap="tap" style={{ padding: '32px' }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
-                                <div className="icon-wrapper" style={{ width: '44px', height: '44px', background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}>
-                                    <Star size={20} />
-                                </div>
-                                <h3 style={{ fontSize: '1.1rem', fontWeight: '600' }}>Who I Am</h3>
-                            </div>
-                            <p style={{ fontSize: '0.9rem', lineHeight: '1.8', color: '#a0a0a0', marginBottom: '24px' }}>
-                                I'm a Software Engineer with expertise in building production-grade AI systems.
-                                I specialize in <span style={{ color: '#a855f7', fontWeight: '500' }}>Large Language Models</span>,
-                                <span style={{ color: '#a855f7', fontWeight: '500' }}> LangChain</span>, and
-                                <span style={{ color: '#a855f7', fontWeight: '500' }}> RAG techniques</span>.
-                            </p>
-                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                            <motion.h2 initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }}
+                                style={{ fontSize: 'clamp(3rem, 8vw, 5.5rem)', fontWeight: '900', lineHeight: '0.9', margin: '0 0 30px 0', letterSpacing: '-0.04em', textTransform: 'uppercase', color: '#f0f0f0' }}>
+                                Manish <br /> <span style={{ color: '#a855f7' }}>Parmar</span>
+                            </motion.h2>
+
+                            <motion.p initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}
+                                style={{ fontSize: '1.1rem', color: '#888', maxWidth: '480px', lineHeight: '1.6', marginBottom: '40px' }}>
+                                I'm a <span style={{ color: '#ffffff', fontWeight: '500' }}>Software Engineer</span> specialized in building production-grade AI systems,
+                                focusing on Large Language Models, LangChain, and RAG techniques.
+                            </motion.p>
+
+                            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
+                                style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '40px' }}>
                                 {['Python', 'LangChain', 'FastAPI', 'Docker', 'React', 'AI/ML'].map((tech, idx) => (
-                                    <motion.span key={idx} className="badge" whileHover={{ scale: 1.1, y: -3 }}>{tech}</motion.span>
+                                    <span key={idx} style={{
+                                        padding: '8px 20px', borderRadius: '30px', border: '1px solid rgba(168, 85, 247, 0.3)',
+                                        color: '#a855f7', fontSize: '0.85rem', fontWeight: '500'
+                                    }}>{tech}</span>
                                 ))}
-                            </div>
-                        </motion.div>
+                            </motion.div>
 
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                            {[
-                                { icon: Mail, label: 'Email', value: 'manish55555parmar@gmail.com', href: 'mailto:manish55555parmar@gmail.com', gradient: 'linear-gradient(135deg, #7c3aed, #a855f7)' },
-                                { icon: Linkedin, label: 'LinkedIn', value: 'Connect with me', href: 'https://linkedin.com/in/manish-parmar-8a30b33a6', gradient: 'linear-gradient(135deg, #a855f7, #c084fc)' },
-                                { icon: Github, label: 'GitHub', value: 'manish860200', href: 'https://github.com/manish860200', gradient: 'linear-gradient(135deg, #10b981, #34d399)' }
-                            ].map((social, idx) => (
-                                <motion.a key={idx} href={social.href} target="_blank" rel="noopener noreferrer" className="glass-card ripple"
-                                    variants={cardHoverVariants} initial="rest" whileHover="hover" whileTap="tap"
-                                    style={{ padding: '20px', display: 'flex', alignItems: 'center', gap: '16px' }}>
-                                    <motion.div className="icon-wrapper" whileHover={{ rotate: 10, scale: 1.1 }}
-                                        style={{ width: '44px', height: '44px', background: social.gradient }}>
-                                        <social.icon size={20} />
-                                    </motion.div>
-                                    <div>
-                                        <div style={{ fontSize: '0.75rem', color: '#666666', marginBottom: '3px' }}>{social.label}</div>
-                                        <div style={{ fontSize: '0.9rem', fontWeight: '500', color: 'white' }}>{social.value}</div>
-                                    </div>
-                                    <ExternalLink size={16} style={{ marginLeft: 'auto', color: '#666666' }} />
-                                </motion.a>
-                            ))}
+                            <motion.a href="#projects" className="btn-primary ripple" style={{ padding: '16px 32px' }}
+                                whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                                View Portfolio <ArrowRight size={18} style={{ marginLeft: '10px' }} />
+                            </motion.a>
+                        </div>
+
+                        {/* Image Content */}
+                        <div style={{ flex: '1', minWidth: '320px', position: 'relative', display: 'flex', justifyContent: 'center' }}>
+                            <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }}
+                                style={{
+                                    position: 'relative', width: '100%', maxWidth: '450px', aspectRatio: '0.9/1',
+                                    borderRadius: '40px 180px 40px 40px', overflow: 'hidden',
+                                    background: '#e0f2d8', // The light green background from reference
+                                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+                                }}>
+                                <img src="/profile.jpg" alt="Manish Parmar"
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                />
+                            </motion.div>
+
+                            {/* Floating Icons */}
+                            <div style={{ position: 'absolute', bottom: '40px', left: '-20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                                {[
+                                    { icon: Github, href: 'https://github.com/manish860200' },
+                                    { icon: Linkedin, href: 'https://linkedin.com/in/manish-parmar-8a30b33a6' }
+                                ].map((item, i) => (
+                                    <motion.a key={i} href={item.href} target="_blank" rel="noreferrer"
+                                        whileHover={{ scale: 1.2, rotate: 5 }}
+                                        style={{
+                                            width: '50px', height: '50px', background: 'white', borderRadius: '50%',
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'black',
+                                            boxShadow: '0 10px 20px rgba(0,0,0,0.2)'
+                                        }}>
+                                        <item.icon size={22} />
+                                    </motion.a>
+                                ))}
+                                <motion.div whileHover={{ scale: 1.2 }}
+                                    style={{
+                                        width: '50px', height: '50px', background: '#333', borderRadius: '50%',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white'
+                                    }}>
+                                    <ArrowRight size={22} style={{ transform: 'rotate(-45deg)' }} />
+                                </motion.div>
+                            </div>
                         </div>
                     </div>
                 </motion.div>
@@ -478,10 +493,10 @@ const SinglePagePortfolio = () => {
                         ))}
                     </div>
                 </motion.div>
-            </section>
+            </section >
 
             {/* Contact Section */}
-            <section id="contact" className="section">
+            < section id="contact" className="section" >
                 <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-100px' }}
                     transition={{ duration: 0.8 }} style={{ maxWidth: '700px', margin: '0 auto' }}>
                     <h2 className="section-title">Get in <span className="gradient-text">Touch</span></h2>
@@ -530,14 +545,14 @@ const SinglePagePortfolio = () => {
                         </form>
                     </motion.div>
                 </motion.div>
-            </section>
+            </section >
 
             {/* Footer - Simplified */}
-            <footer style={{ padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(255, 255, 255, 0.04)', background: 'rgba(0, 0, 0, 0.9)' }}>
+            < footer style={{ padding: '40px 24px', textAlign: 'center', borderTop: '1px solid rgba(255, 255, 255, 0.04)', background: 'rgba(0, 0, 0, 0.9)' }}>
                 <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} style={{ color: '#666666', fontSize: '0.85rem' }}>
                     © 2026 Manish Parmar. All rights reserved.
                 </motion.p>
-            </footer>
+            </footer >
 
             <style>{`
                 @media (max-width: 768px) {
@@ -545,7 +560,7 @@ const SinglePagePortfolio = () => {
                     .mobile-menu-btn { display: block !important; }
                 }
             `}</style>
-        </div>
+        </div >
     );
 };
 
