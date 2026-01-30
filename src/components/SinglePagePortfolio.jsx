@@ -382,7 +382,7 @@ const SinglePagePortfolio = () => {
 
                             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
                                 style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '40px' }}>
-                                {['Python', 'LangChain', 'FastAPI', 'Docker', 'React', 'AI/ML'].map((tech, idx) => (
+                                {['Python', 'LangChain', 'FastAPI', 'LLM', 'RAG', 'React', 'AI/ML'].map((tech, idx) => (
                                     <span key={idx} style={{
                                         padding: '8px 20px', borderRadius: '30px', border: '1px solid rgba(168, 85, 247, 0.3)',
                                         color: '#a855f7', fontSize: '0.85rem', fontWeight: '500'
@@ -392,7 +392,7 @@ const SinglePagePortfolio = () => {
 
                             <motion.a href="#projects" className="btn-primary ripple" style={{ padding: '16px 32px' }}
                                 whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                                View Portfolio <ArrowRight size={18} style={{ marginLeft: '10px' }} />
+                                View Projects <ArrowRight size={18} style={{ marginLeft: '10px' }} />
                             </motion.a>
                         </div>
 
@@ -400,13 +400,13 @@ const SinglePagePortfolio = () => {
                         <div style={{ flex: '1', minWidth: '320px', position: 'relative', display: 'flex', justifyContent: 'center' }}>
                             <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }}
                                 style={{
-                                    position: 'relative', width: '100%', maxWidth: '450px', aspectRatio: '0.9/1',
-                                    borderRadius: '40px 180px 40px 40px', overflow: 'hidden',
+                                    position: 'relative', width: '100%', maxWidth: '380px', aspectRatio: '1/1',
+                                    borderRadius: '24px', overflow: 'hidden',
                                     background: '#e0f2d8', // The light green background from reference
                                     boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
                                 }}>
                                 <img src="/profile.jpg" alt="Manish Parmar"
-                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
                                 />
                             </motion.div>
 
