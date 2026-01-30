@@ -155,32 +155,32 @@ const SinglePagePortfolio = () => {
     const projects = [
         {
             title: 'FSSAI Regulatory AI Analyst',
-            tech: ['LangChain', 'RAG', 'Python', 'LLMs'],
-            description: 'Advanced Generative AI system designed to analyze complex FSSAI food safety regulations. Implemented highly accurate RAG (Retrieval-Augmented Generation) using FAISS and LangChain to provide instant, compliant answers from large policy documents.',
+            tech: ['LangChain', 'RAG', 'FAISS', 'Python', 'GPT-4'],
+            description: 'Engineered a specialized Generative AI analyst to interpret complex FSSAI food safety regulations. Developed a robust RAG (Retrieval-Augmented Generation) pipeline using LangChain for intelligent document chunking and FAISS for high-performance vector similarity search. The system provides contextually accurate, compliant answers from thousands of pages of regulatory documentation.',
             icon: Brain,
             gradient: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)',
             github: 'https://github.com/manish860200'
         },
         {
             title: 'Autonomous Research Agents',
-            tech: ['LangChain', 'GPT-4', 'Python'],
-            description: 'Multi-agent system that autonomously performs technical research and data synthesis. Utilized LangChain Agents and custom tool-calling to orchestrate LLMs through complex multi-step reasoning workflows.',
+            tech: ['LangChain Agents', 'GPT-4o', 'Python', 'REST APIs'],
+            description: 'Built a multi-agent framework that autonomously executes technical research tasks. Leveraged LangChain Agents with custom tool-calling capabilities to orchestrate LLMs through recursive reasoning loops, automated data synthesis, and report generation workflows.',
             icon: Bot,
             gradient: 'linear-gradient(135deg, #10b981 0%, #34d399 100%)',
             github: 'https://github.com/manish860200'
         },
         {
             title: 'LLM Orchestration Backend',
-            tech: ['FastAPI', 'Python', 'Docker'],
-            description: 'Production-grade FastAPI backend for scaling LLM applications. Features efficient prompt management, streaming responses, and containerized deployment for high-performance AI services.',
+            tech: ['FastAPI', 'Docker', 'Python', 'Redis'],
+            description: 'Architected a production-ready FastAPI backend for scaling LLM-driven applications. Implemented asynchronous prompt management, streaming response architectures, and containerized deployment strategies to ensure high-performance delivery of Generative AI services.',
             icon: Sparkles,
             gradient: 'linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%)',
             github: 'https://github.com/manish860200'
         },
         {
-            title: 'Vector-Store Search Engine',
-            tech: ['FAISS', 'Vector DB', 'LLMs'],
-            description: 'High-speed semantic search implementation using FAISS. Developed custom indexing strategies for vector databases to enable instant information retrieval across millions of data points.',
+            title: 'Semantic Vector Search Engine',
+            tech: ['FAISS', 'Vector Databases', 'Python', 'LLMs'],
+            description: 'Developed a high-speed semantic search system utilizing FAISS for indexing millions of high-dimensional embeddings. Focused on optimizing vector retrieval latency and implementing hybrid search strategies to enable instant, relevant information retrieval for AI applications.',
             icon: Rocket,
             gradient: 'linear-gradient(135deg, #ec4899 0%, #f472b6 100%)',
             github: 'https://github.com/manish860200'
