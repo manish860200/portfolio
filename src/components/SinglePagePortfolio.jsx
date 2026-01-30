@@ -47,12 +47,31 @@ const SinglePagePortfolio = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        setTimeout(() => {
-            setStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
-            setFormData({ name: '', email: '', subject: '', message: '' });
+        setStatus({ type: '', message: '' });
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+                setStatus({ type: 'success', message: result.message || 'Thank you! Your message has been sent successfully.' });
+                setFormData({ name: '', email: '', subject: '', message: '' });
+            } else {
+                setStatus({ type: 'error', message: result.message || 'Something went wrong. Please try again.' });
+            }
+        } catch (error) {
+            setStatus({ type: 'error', message: 'Failed to send message. Please check your connection.' });
+        } finally {
             setIsSubmitting(false);
-            setTimeout(() => setStatus({ type: '', message: '' }), 5000);
-        }, 1500);
+            setTimeout(() => setStatus({ type: '', message: '' }), 6000);
+        }
     };
 
     const navItems = [
