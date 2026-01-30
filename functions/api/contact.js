@@ -14,19 +14,44 @@ export async function onRequestPost({ request }) {
             });
         }
 
-        // Log the submission (visible in Cloudflare dashboard logs)
-        console.log(`New contact form submission from ${name} (${email}): ${subject} - ${message}`);
+        // Web3Forms Integration
+        const accessKey = "ba185174-2740-4c13-b805-083f14f00bfd";
 
-        // In a real scenario, you would send an email here using a service like MailChannels,
-        // SendGrid, or simply forwarding to a webhook.
-
-        return new Response(JSON.stringify({
-            success: true,
-            message: "Thank you! Your message has been received by our Cloudflare backend."
-        }), {
-            status: 200,
-            headers: { "Content-Type": "application/json" }
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: JSON.stringify({
+                access_key: accessKey,
+                name: name,
+                email: email,
+                subject: subject || "New Contact Form Submission",
+                message: message,
+                from_name: "Portfolio Contact Form",
+            }),
         });
+
+        const result = await response.json();
+
+        if (result.success) {
+            return new Response(JSON.stringify({
+                success: true,
+                message: "Thank you! Your message has been sent successfully to Manish's inbox."
+            }), {
+                status: 200,
+                headers: { "Content-Type": "application/json" }
+            });
+        } else {
+            return new Response(JSON.stringify({
+                success: false,
+                message: result.message || "Failed to send email. Please try again later."
+            }), {
+                status: 500,
+                headers: { "Content-Type": "application/json" }
+            });
+        }
 
     } catch (err) {
         return new Response(JSON.stringify({
