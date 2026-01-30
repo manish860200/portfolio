@@ -72,7 +72,7 @@ const SinglePagePortfolio = () => {
             const result = await response.json();
 
             if (response.ok && result.success) {
-                setStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
+                setStatus({ type: 'success', message: 'Success! Message sent to manish.prm86@gmail.com.' });
                 setFormData({ name: '', email: '', subject: '', message: '' });
             } else {
                 console.error('Web3Forms Error:', result);
