@@ -123,76 +123,66 @@ const SinglePagePortfolio = () => {
             ]
         },
         {
-            title: 'Programming',
+            title: 'Foundations',
             skills: [
                 { name: 'Python', logo: '🐍', bg: '#3776ab' },
-                { name: 'JavaScript', logo: 'JS', bg: '#f7df1e', textColor: '#000' },
-                { name: 'TypeScript', logo: 'TS', bg: '#3178c6' },
-            ]
-        },
-        {
-            title: 'Databases',
-            skills: [
-                { name: 'PostgreSQL', logo: '🐘', bg: '#336791' },
-                { name: 'MongoDB', logo: '🍃', bg: '#47a248' },
-                { name: 'FAISS', logo: '⚡', bg: '#1a1a2e' },
-            ]
-        },
-        {
-            title: 'Frameworks',
-            skills: [
                 { name: 'FastAPI', logo: '⚡', bg: '#009688' },
             ]
         },
         {
-            title: 'DevOps & Tools',
+            title: 'Vector Databases',
             skills: [
-                { name: 'Docker', logo: '🐳', bg: '#2496ed' },
-                { name: 'Git', logo: '📦', bg: '#f05032' },
-                { name: 'AWS', logo: '☁️', bg: '#232f3e' },
+                { name: 'FAISS', logo: '⚡', bg: '#1a1a2e' },
+                { name: 'Vector DB', logo: '🔷', bg: '#1a1a2e' },
             ]
         },
         {
-            title: 'AI Tools',
+            title: 'AI Engineering',
             skills: [
                 { name: 'RAG', logo: '📚', bg: '#7c3aed' },
-                { name: 'Vector DB', logo: '🔷', bg: '#1a1a2e' },
                 { name: 'Agents', logo: '🤖', bg: '#10b981' },
+            ]
+        },
+        {
+            title: 'Tools',
+            skills: [
+                { name: 'Docker', logo: '🐳', bg: '#2496ed' },
+                { name: 'Git', logo: '📦', bg: '#f05032' },
             ]
         }
     ];
 
     const projects = [
         {
-            title: 'Gemini-Like GenAI System',
-            tech: ['Python', 'LangChain', 'RAG'],
-            description: 'Production-grade AI system with advanced RAG techniques and vector databases',
+            title: 'FSSAI Regulatory AI Analyst',
+            tech: ['LangChain', 'RAG', 'Python', 'LLMs'],
+            description: 'Advanced Generative AI system designed to analyze complex FSSAI food safety regulations. Implemented highly accurate RAG (Retrieval-Augmented Generation) using FAISS and LangChain to provide instant, compliant answers from large policy documents.',
             icon: Brain,
             gradient: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)',
             github: 'https://github.com/manish860200'
         },
         {
-            title: 'Agent-Based AI Assistant',
-            tech: ['Python', 'LLMs', 'LangChain'],
-            description: 'Intelligent agent system for automated research and data analysis',
+            title: 'Autonomous Research Agents',
+            tech: ['LangChain', 'GPT-4', 'Python'],
+            description: 'Multi-agent system that autonomously performs technical research and data synthesis. Utilized LangChain Agents and custom tool-calling to orchestrate LLMs through complex multi-step reasoning workflows.',
             icon: Bot,
             gradient: 'linear-gradient(135deg, #10b981 0%, #34d399 100%)',
             github: 'https://github.com/manish860200'
         },
         {
-            title: 'Modern Portfolio Website',
-            tech: ['React', 'Framer Motion'],
-            description: 'Stunning portfolio with smooth animations and modern design',
-            icon: Rocket,
-            gradient: 'linear-gradient(135deg, #ec4899 0%, #f472b6 100%)',
+            title: 'LLM Orchestration Backend',
+            tech: ['FastAPI', 'Python', 'Docker'],
+            description: 'Production-grade FastAPI backend for scaling LLM applications. Features efficient prompt management, streaming responses, and containerized deployment for high-performance AI services.',
+            icon: Sparkles,
+            gradient: 'linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%)',
             github: 'https://github.com/manish860200'
         },
         {
-            title: 'AI-Powered Code Assistant',
-            tech: ['Python', 'FastAPI'],
-            description: 'AI assistant for code generation and debugging',
-            icon: Sparkles,
-            gradient: 'linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%)',
+            title: 'Vector-Store Search Engine',
+            tech: ['FAISS', 'Vector DB', 'LLMs'],
+            description: 'High-speed semantic search implementation using FAISS. Developed custom indexing strategies for vector databases to enable instant information retrieval across millions of data points.',
+            icon: Rocket,
+            gradient: 'linear-gradient(135deg, #ec4899 0%, #f472b6 100%)',
             github: 'https://github.com/manish860200'
         }
     ];
@@ -231,42 +221,42 @@ const SinglePagePortfolio = () => {
         tap: { scale: 0.98, y: -5 }
     };
 
-    // Skill Logo Card Component
-    // Simplified Skill Logo Card Component
+    // Simplified Skill Logo Card Component with Visible Text Label
     const SkillCard = ({ skill }) => (
-        <motion.div
-            whileHover={{
-                y: -10,
-                scale: 1.1,
-                boxShadow: `0 15px 30px rgba(0,0,0,0.4), 0 0 15px ${skill.bg}33`
-            }}
-            whileTap={{ scale: 0.95 }}
-            style={{
-                width: '75px',
-                height: '75px',
-                background: skill.bg || 'rgba(0,0,0,0.5)',
-                borderRadius: '18px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: skill.logo.length <= 2 ? '1.8rem' : '1.5rem',
-                fontWeight: skill.logo.length <= 2 ? '700' : '400',
-                color: skill.textColor || '#fff',
-                cursor: 'pointer',
-                border: '1px solid rgba(255,255,255,0.1)',
-                transition: 'all 0.3s ease-out',
-                position: 'relative',
-                overflow: 'hidden'
-            }}
-            title={skill.name}
-        >
-            <div style={{
-                position: 'absolute', inset: 0,
-                background: 'linear-gradient(135deg, rgba(255,255,255,0.1), transparent)',
-                pointerEvents: 'none'
-            }} />
-            <span>{skill.logo}</span>
-        </motion.div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
+            <motion.div
+                whileHover={{
+                    y: -8,
+                    scale: 1.1,
+                    boxShadow: `0 15px 30px rgba(0,0,0,0.4), 0 0 15px ${skill.bg}33`
+                }}
+                whileTap={{ scale: 0.95 }}
+                style={{
+                    width: '64px',
+                    height: '64px',
+                    background: skill.bg || 'rgba(0,0,0,0.5)',
+                    borderRadius: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '1.5rem',
+                    color: skill.textColor || '#fff',
+                    cursor: 'pointer',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    transition: 'all 0.3s ease-out',
+                    position: 'relative',
+                    overflow: 'hidden'
+                }}
+            >
+                <div style={{
+                    position: 'absolute', inset: 0,
+                    background: 'linear-gradient(135deg, rgba(255,255,255,0.1), transparent)',
+                    pointerEvents: 'none'
+                }} />
+                <span>{skill.logo}</span>
+            </motion.div>
+            <span style={{ fontSize: '0.75rem', color: '#a0a0a0', fontWeight: '500' }}>{skill.name}</span>
+        </div>
     );
 
     return (
@@ -379,11 +369,11 @@ const SinglePagePortfolio = () => {
                     </motion.p>
 
                     <motion.h1 variants={itemVariants} style={{ fontSize: 'clamp(2rem, 5vw, 3.2rem)', fontWeight: '700', marginBottom: '20px', lineHeight: '1.2', letterSpacing: '-0.03em' }}>
-                        Building the future with <span className="gradient-text">AI-Powered Insights</span>
+                        Building the future as an <span className="gradient-text">Intern Software Engineer</span>
                     </motion.h1>
 
                     <motion.p variants={itemVariants} style={{ fontSize: '1rem', color: '#a0a0a0', marginBottom: '36px', maxWidth: '550px', margin: '0 auto 36px', lineHeight: '1.7' }}>
-                        Software Engineer specialized in LLMs, LangChain, and production-grade AI systems
+                        Specialized in Gen AI, LLMs, LangChain, and production-grade RAG systems.
                     </motion.p>
 
                     <motion.div variants={itemVariants} style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
@@ -421,7 +411,7 @@ const SinglePagePortfolio = () => {
 
                             <motion.p initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}
                                 style={{ fontSize: '1.1rem', color: '#888', maxWidth: '480px', lineHeight: '1.6', marginBottom: '40px' }}>
-                                I'm a <span style={{ color: '#ffffff', fontWeight: '500' }}>Software Engineer</span> specialized in building production-grade AI systems,
+                                I'm an <span style={{ color: '#ffffff', fontWeight: '500' }}>Intern Software Engineer</span> specialized in building production-grade AI systems,
                                 focusing on Large Language Models, LangChain, and RAG techniques.
                             </motion.p>
 

@@ -1,6 +1,6 @@
 # 🌌 Manish Parmar | AI/ML Portfolio 🚀
 
-A premium, cinematic portfolio website featuring an **"Anti-Gravity"** UI experience. Designed for a software engineer specializing in **Large Language Models (LLMs)**, **RAG**, and **FastAPI**.
+A premium, cinematic portfolio website featuring an **"Anti-Gravity"** UI experience. Designed for an **Intern Software Engineer** specializing in **Large Language Models (LLMs)**, **RAG**, and **FastAPI**.
 
 ## ✨ Visual Experience: "Anti-Gravity"
 
@@ -12,8 +12,8 @@ This portfolio is built with a custom design philosophy inspired by weightlessne
 
 ## 🛠️ Specialized Stack
 
-- **Core Engineering**: Python, FastAPI, Docker, SQL/NoSQL
-- **AI/ML**: OpenAI, LangChain, RAG Systems, Vector Databases (FAISS, MongoDB Atlas Vector Search)
+- **Core Engineering**: Python, FastAPI, Docker, SQL
+- **AI/ML**: OpenAI, LangChain, RAG Systems, Vector Databases (FAISS)
 - **Frontend**: React, Vite, Framer Motion, Vanilla CSS (Custom Design System)
 - **Icons**: Lucide React (Refined minimalist styling)
 
