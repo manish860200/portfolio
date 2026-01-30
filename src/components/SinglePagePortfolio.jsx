@@ -381,7 +381,7 @@ const SinglePagePortfolio = () => {
                     </motion.div>
 
                     <motion.div variants={itemVariants} style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                        <motion.a href="#projects" className="btn-secondary ripple" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                        <motion.a href="#projects" className="btn-secondary ripple">
                             <ChevronDown size={16} /> View Projects
                         </motion.a>
                         <motion.a href="#contact" className="btn-primary ripple" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
