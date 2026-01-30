@@ -154,7 +154,7 @@ const SinglePagePortfolio = () => {
 
     const projects = [
         {
-            title: 'FSSAI Regulatory AI Analyst',
+            title: 'Gemini-Like GenAI System',
             tech: ['Python', 'LangChain', 'OpenAI', 'RAG', 'FAISS', 'LLMs'],
             description: 'Engineered a high-precision Generative AI analyst focused on interpreting complex FSSAI food safety regulations. Built a multi-stage RAG pipeline that processes large-scale PDF documentation, performing intelligent semantic chunking and indexing. Leveraged OpenAI embeddings and FAISS for sub-second retrieval of policy-specific context, enabling the system to provide legally grounded answers to regulatory queries.',
             icon: Brain,
@@ -162,7 +162,7 @@ const SinglePagePortfolio = () => {
             github: 'https://github.com/manish860200'
         },
         {
-            title: 'Autonomous Research Agents',
+            title: 'Agent-Based AI Assistant',
             tech: ['Python', 'LangChain Agents', 'GPT-4', 'LangGraph', 'Research Logic'],
             description: 'Developed a multi-agent orchestration framework designed for automated technical research and data synthesis. Utilized LangChain Agents to deploy specialized AI roles that autonomously navigate web sources and extract structured data. Implemented advanced reasoning loops (ReAct) and memory management to maintain consistency across complex, multi-step research investigations.',
             icon: Bot,
@@ -170,7 +170,7 @@ const SinglePagePortfolio = () => {
             github: 'https://github.com/manish860200'
         },
         {
-            title: 'LLM Orchestration Backend',
+            title: 'Modern Portfolio Website',
             tech: ['Python', 'FastAPI', 'Docker', 'Async API', 'LLM Streaming'],
             description: 'Architected a production-grade FastAPI backend for scaling and serving LLM applications. Implemented asynchronous streaming architectures (SSE) for real-time AI responses and integrated token usage tracking. Developed efficient prompt management systems and containerized the service with Docker for seamless horizontal scaling and high-availability.',
             icon: Sparkles,
@@ -178,7 +178,7 @@ const SinglePagePortfolio = () => {
             github: 'https://github.com/manish860200'
         },
         {
-            title: 'Semantic Knowledge Engine',
+            title: 'AI-Powered Code Assistant',
             tech: ['Python', 'FAISS', 'Vector Store', 'Semantic Search', 'Embeddings'],
             description: 'Built an advanced semantic knowledge engine implementing hybrid search strategies for high-dimensional data. Constructed a custom ingestion pipeline to transform unstructured text into optimized vector embeddings. Focused on fine-tuning recovery accuracy and reducing search latency through advanced indexing techniques in FAISS.',
             icon: Rocket,
