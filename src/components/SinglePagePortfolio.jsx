@@ -296,10 +296,10 @@ const SinglePagePortfolio = () => {
                     </motion.div>
 
                     <motion.p variants={itemVariants} style={{ fontSize: '0.95rem', color: '#a0a0a0', marginBottom: '16px' }}>
-                        Hi, I'm <span style={{ fontSize: '1.4rem', fontWeight: '600', background: 'linear-gradient(135deg, #ffffff, #c084fc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Manish Parmar</span>
+                        Hi, I'm <span style={{ fontSize: '1.1rem', fontWeight: '600', background: 'linear-gradient(135deg, #ffffff, #c084fc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Manish Parmar</span>
                     </motion.p>
 
-                    <motion.h1 variants={itemVariants} style={{ fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', fontWeight: '700', marginBottom: '20px', lineHeight: '1.2', letterSpacing: '-0.03em' }}>
+                    <motion.h1 variants={itemVariants} style={{ fontSize: 'clamp(2rem, 5vw, 3.2rem)', fontWeight: '700', marginBottom: '20px', lineHeight: '1.2', letterSpacing: '-0.03em' }}>
                         Building the future with <span className="gradient-text">AI-Powered Insights</span>
                     </motion.h1>
 
