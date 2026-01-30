@@ -25,7 +25,7 @@ This portfolio is built with a custom design philosophy inspired by weightlessne
 
 ## 🚀 Experience it Live
 
-**[manish.pages.dev](https://manish.pages.dev)**
+**[manish.manish55555parmar.workers.dev](https://manish.manish55555parmar.workers.dev/)**
 
 ## 🛠️ Local Development
 
