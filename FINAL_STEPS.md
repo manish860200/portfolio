@@ -22,7 +22,7 @@
 5. **Copy the Form ID** (looks like `xyzabc123`)
 6. **Tell me your:**
    - Form ID: `_________________`
-   - Email address: `_________________`
+   - Email address: `manish.prm86@gmail.com`
 
 **I'll update the Contact.jsx file for you!**
 
