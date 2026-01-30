@@ -267,7 +267,7 @@ const SinglePagePortfolio = () => {
                 <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <motion.div whileHover={{ rotate: 10, scale: 1.1 }} whileTap={{ scale: 0.95 }}
                         style={{
-                            width: '32px', height: '32px', borderRadius: '8px', overflow: 'hidden',
+                            width: '32px', height: '32px', borderRadius: '50%', overflow: 'hidden',
                             display: 'flex', alignItems: 'center', justifyContent: 'center',
                             boxShadow: '0 4px 15px rgba(124, 58, 237, 0.3)', cursor: 'pointer'
                         }}>
