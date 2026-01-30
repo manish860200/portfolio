@@ -434,16 +434,39 @@ const SinglePagePortfolio = () => {
 
                         {/* Image Content */}
                         <div style={{ flex: '1', minWidth: '320px', position: 'relative', display: 'flex', justifyContent: 'center' }}>
+                            {/* Decorative Floating Frame */}
+                            <motion.div
+                                animate={{
+                                    y: [0, -10, 0],
+                                    rotate: [0, 2, 0]
+                                }}
+                                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                                style={{
+                                    position: 'absolute', top: '20px', right: '40px', width: '80%', height: '90%',
+                                    border: '1px solid rgba(124, 58, 237, 0.3)', borderRadius: '30px',
+                                    zIndex: 0, pointerEvents: 'none'
+                                }}
+                            />
+
                             <motion.div initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }}
                                 style={{
-                                    position: 'relative', width: '100%', maxWidth: '380px', aspectRatio: '1/1',
-                                    borderRadius: '24px', overflow: 'hidden',
-                                    background: '#e0f2d8', // The light green background from reference
-                                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+                                    position: 'relative', width: '100%', maxWidth: '380px', aspectRatio: '0.75/1',
+                                    borderRadius: '32px', overflow: 'hidden', zIndex: 1,
+                                    background: 'linear-gradient(135deg, rgba(124, 58, 237, 0.1), transparent)',
+                                    boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+                                    border: '1px solid rgba(255, 255, 255, 0.05)'
                                 }}>
-                                <img src="/profile.jpg" alt="Manish Parmar"
-                                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
+                                <motion.img src="/profile.jpg" alt="Manish Parmar"
+                                    whileHover={{ scale: 1.05 }}
+                                    transition={{ duration: 0.4 }}
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                                 />
+                                {/* Bottom Overlay for Depth */}
+                                <div style={{
+                                    position: 'absolute', bottom: 0, left: 0, right: 0, height: '40%',
+                                    background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent)',
+                                    pointerEvents: 'none'
+                                }} />
                             </motion.div>
 
                             {/* Floating Icons */}
