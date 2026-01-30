@@ -236,13 +236,22 @@ const SinglePagePortfolio = () => {
     // Skill Logo Card Component
     const SkillCard = ({ skill }) => (
         <motion.div
-            whileHover={{ y: -8, scale: 1.05 }}
+            whileHover={{
+                y: -12,
+                rotateX: 10,
+                rotateY: 10,
+                scale: 1.1,
+                boxShadow: `0 20px 40px rgba(0,0,0,0.4), 0 0 20px ${skill.bg}44`
+            }}
             whileTap={{ scale: 0.95 }}
+            initial={{ rotateX: 0, rotateY: 0 }}
             style={{
-                width: '70px',
-                height: '70px',
-                background: skill.bg || '#1a1a2e',
-                borderRadius: '16px',
+                width: '75px',
+                height: '75px',
+                background: `linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01))`,
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                borderRadius: '18px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -250,13 +259,24 @@ const SinglePagePortfolio = () => {
                 fontWeight: skill.logo.length <= 2 ? '700' : '400',
                 color: skill.textColor || '#fff',
                 cursor: 'pointer',
-                border: '1px solid rgba(255,255,255,0.08)',
-                transition: 'all 0.3s ease',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.3)'
+                border: '1px solid rgba(255,255,255,0.1)',
+                borderTopColor: 'rgba(255,255,255,0.2)',
+                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+                transformStyle: 'preserve-3d',
+                position: 'relative'
             }}
             title={skill.name}
         >
-            {skill.logo}
+            {/* 3D Depth Layer */}
+            <div style={{
+                position: 'absolute', inset: 0, borderRadius: '18px',
+                background: skill.bg, opacity: 0.15, zIndex: -1
+            }} />
+
+            <motion.span style={{ transform: 'translateZ(20px)' }}>
+                {skill.logo}
+            </motion.span>
         </motion.div>
     );
 
@@ -529,7 +549,7 @@ const SinglePagePortfolio = () => {
                                 <h3 style={{ fontSize: '0.9rem', fontWeight: '600', color: '#a0a0a0', marginBottom: '20px', textAlign: 'center' }}>
                                     {category.title}
                                 </h3>
-                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
+                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center', perspective: '1000px' }}>
                                     {category.skills.map((skill, i) => (
                                         <SkillCard key={i} skill={skill} />
                                     ))}
