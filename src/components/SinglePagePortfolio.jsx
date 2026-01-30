@@ -87,6 +87,23 @@ const SinglePagePortfolio = () => {
         }
     };
 
+    const BackgroundLines = () => (
+        <div className="bg-lines-container">
+            {[20, 40, 60, 80].map((pos) => (
+                <React.Fragment key={`h-${pos}`}>
+                    <div className="bg-line bg-line-h" style={{ top: `${pos}%` }} />
+                    <div className="light-traveler light-traveler-h" style={{ top: `${pos}%`, animationDelay: `${pos * 0.1}s` }} />
+                </React.Fragment>
+            ))}
+            {[25, 50, 75].map((pos) => (
+                <React.Fragment key={`v-${pos}`}>
+                    <div className="bg-line bg-line-v" style={{ left: `${pos}%` }} />
+                    <div className="light-traveler light-traveler-v" style={{ left: `${pos}%`, animationDelay: `${pos * 0.12}s` }} />
+                </React.Fragment>
+            ))}
+        </div>
+    );
+
     const navItems = [
         { id: 'home', label: 'Home' },
         { id: 'about', label: 'About' },
@@ -184,18 +201,36 @@ const SinglePagePortfolio = () => {
 
     const containerVariants = {
         hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
+        visible: { opacity: 1, transition: { staggerChildren: 0.15, delayChildren: 0.2 } }
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+        hidden: { opacity: 0, y: 30, scale: 0.95 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            transition: {
+                type: "spring",
+                damping: 20,
+                stiffness: 80
+            }
+        }
     };
 
     const cardHoverVariants = {
-        rest: { scale: 1 },
-        hover: { scale: 1.02, transition: { duration: 0.3, ease: 'easeOut' } },
-        tap: { scale: 0.98 }
+        rest: { y: 0, scale: 1, rotate: 0 },
+        hover: {
+            y: -15,
+            scale: 1.02,
+            rotate: 1,
+            transition: {
+                type: "spring",
+                stiffness: 150,
+                damping: 15
+            }
+        },
+        tap: { scale: 0.98, y: -5 }
     };
 
     // Skill Logo Card Component
@@ -226,7 +261,8 @@ const SinglePagePortfolio = () => {
     );
 
     return (
-        <div style={{ background: '#000000', color: 'white', minHeight: '100vh', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ background: '#000000', color: 'white', minHeight: '100vh', position: 'relative' }}>
+            <BackgroundLines />
             {/* Animated Background Particles */}
             <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
                 {[...Array(25)].map((_, i) => (
@@ -382,7 +418,7 @@ const SinglePagePortfolio = () => {
 
                             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
                                 style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginBottom: '40px' }}>
-                                {['Python', 'LangChain', 'FastAPI', 'LLM', 'RAG', 'React', 'AI/ML'].map((tech, idx) => (
+                                {['Python', 'LangChain', 'FastAPI', 'LLM', 'RAG', 'Docker', 'AI/ML'].map((tech, idx) => (
                                     <span key={idx} style={{
                                         padding: '8px 20px', borderRadius: '30px', border: '1px solid rgba(168, 85, 247, 0.3)',
                                         color: '#a855f7', fontSize: '0.85rem', fontWeight: '500'
