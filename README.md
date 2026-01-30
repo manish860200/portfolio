@@ -1,28 +1,33 @@
-# Modern AI & Python Portfolio 🚀
+# 🌌 Manish Parmar | AI/ML Portfolio 🚀
 
-A high-performance, dark-mode portfolio website designed for AI engineers and Python developers. Built with **React**, **Vite**, and **Framer Motion**, featuring a "superfast" architecture and seamless animations.
+A premium, cinematic portfolio website featuring an **"Anti-Gravity"** UI experience. Designed for a software engineer specializing in **Large Language Models (LLMs)**, **RAG**, and **FastAPI**.
 
-## ✨ Features
+## ✨ Visual Experience: "Anti-Gravity"
 
-- 🏎️ **Superfast Performance**: Implemented Route-based Lazy Loading and Code Splitting for near-instant page transitions.
-- 🎨 **Minimalist Aesthetics**: Clean, background-free Lucide icons and pure SVGs with soft shadows.
-- 📧 **Contact Form**: Integrated with Web3Forms for immediate email notifications.
-- 📱 **Fully Responsive**: Optimized for desktop, tablet, and mobile viewing.
-- 🐍 **GenAI Focused**: High-tech landing page elements reflecting a specialization in LLMs and Python development.
+This portfolio is built with a custom design philosophy inspired by weightlessness and cinematic flow:
+- **Permanent Visual Frame**: A sophisticated "light-line" framework that persists across all sections.
+- **Floating Motion**: Every UI component features buoyant animations powered by **Framer Motion** spring physics.
+- **3D Cinematic Effects**: High-end 3D tilt interactions on profile photos and glassmorphism elements.
+- **Immersive Transitions**: Layered section entries for a seamless, futuristic browsing experience.
 
-## 🛠️ Tech Stack
+## 🛠️ Specialized Stack
 
-- **Frontend**: React 19, Vite
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Hosting**: Vercel
-- **Forms**: Web3Forms
+- **Core Engineering**: Python, FastAPI, Docker, SQL/NoSQL
+- **AI/ML**: OpenAI, LangChain, RAG Systems, Vector Databases (FAISS, MongoDB Atlas Vector Search)
+- **Frontend**: React, Vite, Framer Motion, Vanilla CSS (Custom Design System)
+- **Icons**: Lucide React (Refined minimalist styling)
 
-## 🚀 Live Demo
+## 📦 Deployment & Services
 
-Check out the live version: **[manish-parmar-portfolio.vercel.app](https://manish-parmar-portfolio.vercel.app)**
+- **Hosting**: Deployed on **Cloudflare Pages** for global edge performance.
+- **Contact Service**: Integrated with **Web3Forms** for instant email connectivity.
+- **CI/CD**: Automated deployment via GitHub Actions/Cloudflare Integration.
 
-## 📦 Installation & Setup
+## 🚀 Experience it Live
+
+**[manish.pages.dev](https://manish.pages.dev)**
+
+## 🛠️ Local Development
 
 1. **Clone the repository**:
    ```bash
@@ -35,19 +40,16 @@ Check out the live version: **[manish-parmar-portfolio.vercel.app](https://manis
    npm install
    ```
 
-3. **Run locally**:
+3. **Launch the engine**:
    ```bash
    npm run dev
    ```
 
-4. **Build for production**:
-   ```bash
-   npm run build
-   ```
+## 📧 Connectivity
 
-## 📧 Contact
-
-Feel free to reach out via the contact form on the website or email directly at [manish55555parmar@gmail.com](mailto:manish55555parmar@gmail.com).
+Connect with me through the secure contact form on the website or via:
+- **Email**: [manish55555parmar@gmail.com](mailto:manish55555parmar@gmail.com)
+- **LinkedIn**: [Profile](https://linkedin.com/in/manish-parmar-8a30b33a6)
 
 ---
-Built with 🔥 by Manish
+*Elevating Digital Experiences through AI & Anti-Gravity Design.*
