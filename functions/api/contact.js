@@ -15,7 +15,7 @@ export async function onRequestPost({ request }) {
         }
 
         // Web3Forms Integration
-        const accessKey = "ba185174-2740-4c13-b805-083f14f00bfd";
+        const accessKey = "b2e918c5-3967-4895-af6d-dbe54405527e";
 
         const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
