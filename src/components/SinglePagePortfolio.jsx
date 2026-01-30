@@ -53,17 +53,19 @@ const SinglePagePortfolio = () => {
         const accessKey = "b2e918c5-3967-4895-af6d-dbe54405527e";
 
         try {
-            const response = await fetch('/api/contact', {
+            const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
+                    access_key: accessKey,
                     name: formData.name,
                     email: formData.email,
-                    subject: formData.subject || "Verified New Email Contact",
-                    message: formData.message
+                    subject: formData.subject || "EMERGENCY SYNC TEST - NEW EMAIL",
+                    message: formData.message,
+                    from_name: "Manish Portfolio (Direct Sync)"
                 }),
             });
 
