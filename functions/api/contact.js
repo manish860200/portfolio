@@ -27,9 +27,9 @@ export async function onRequestPost({ request }) {
                 access_key: accessKey,
                 name: name,
                 email: email,
-                subject: subject || "New Contact Form Submission",
+                subject: subject || "Verified New Email Contact",
                 message: message,
-                from_name: "Portfolio Contact Form",
+                from_name: "Portfolio REBORN"
             }),
         });
 

@@ -53,19 +53,17 @@ const SinglePagePortfolio = () => {
         const accessKey = "b2e918c5-3967-4895-af6d-dbe54405527e";
 
         try {
-            const response = await fetch('https://api.web3forms.com/submit', {
+            const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
-                    access_key: accessKey,
                     name: formData.name,
                     email: formData.email,
-                    subject: formData.subject || "New Portfolio Contact",
-                    message: formData.message,
-                    from_name: "Manish Portfolio"
+                    subject: formData.subject || "Verified New Email Contact",
+                    message: formData.message
                 }),
             });
 
@@ -357,7 +355,7 @@ const SinglePagePortfolio = () => {
                         <motion.div className="status-badge" whileHover={{ scale: 1.05 }} style={{ marginBottom: '28px' }}>
                             <div className="status-badge-inner">
                                 <TrendingUp size={14} style={{ color: '#a855f7' }} />
-                                <span style={{ background: 'linear-gradient(135deg, #a855f7, #c084fc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: '600' }}>Available</span>
+                                <span style={{ background: 'linear-gradient(135deg, #a855f7, #c084fc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: '600' }}>Available - REBORN</span>
                                 <span style={{ color: '#a0a0a0' }}>for new opportunities</span>
                                 <ArrowRight size={12} style={{ color: '#666666' }} />
                             </div>
