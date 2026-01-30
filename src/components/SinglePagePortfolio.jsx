@@ -155,32 +155,32 @@ const SinglePagePortfolio = () => {
     const projects = [
         {
             title: 'FSSAI Regulatory AI Analyst',
-            tech: ['LangChain', 'RAG', 'FAISS', 'Python', 'GPT-4'],
-            description: 'Engineered a specialized Generative AI analyst to interpret complex FSSAI food safety regulations. Developed a robust RAG (Retrieval-Augmented Generation) pipeline using LangChain for intelligent document chunking and FAISS for high-performance vector similarity search. The system provides contextually accurate, compliant answers from thousands of pages of regulatory documentation.',
+            tech: ['Python', 'LangChain', 'OpenAI', 'RAG', 'FAISS', 'LLMs'],
+            description: 'Engineered a high-precision Generative AI analyst focused on interpreting complex FSSAI food safety regulations. Built a multi-stage RAG pipeline that processes large-scale PDF documentation, performing intelligent semantic chunking and indexing. Leveraged OpenAI embeddings and FAISS for sub-second retrieval of policy-specific context, enabling the system to provide legally grounded answers to regulatory queries.',
             icon: Brain,
             gradient: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)',
             github: 'https://github.com/manish860200'
         },
         {
             title: 'Autonomous Research Agents',
-            tech: ['LangChain Agents', 'GPT-4o', 'Python', 'REST APIs'],
-            description: 'Built a multi-agent framework that autonomously executes technical research tasks. Leveraged LangChain Agents with custom tool-calling capabilities to orchestrate LLMs through recursive reasoning loops, automated data synthesis, and report generation workflows.',
+            tech: ['Python', 'LangChain Agents', 'GPT-4', 'LangGraph', 'Research Logic'],
+            description: 'Developed a multi-agent orchestration framework designed for automated technical research and data synthesis. Utilized LangChain Agents to deploy specialized AI roles that autonomously navigate web sources and extract structured data. Implemented advanced reasoning loops (ReAct) and memory management to maintain consistency across complex, multi-step research investigations.',
             icon: Bot,
             gradient: 'linear-gradient(135deg, #10b981 0%, #34d399 100%)',
             github: 'https://github.com/manish860200'
         },
         {
             title: 'LLM Orchestration Backend',
-            tech: ['FastAPI', 'Docker', 'Python', 'Redis'],
-            description: 'Architected a production-ready FastAPI backend for scaling LLM-driven applications. Implemented asynchronous prompt management, streaming response architectures, and containerized deployment strategies to ensure high-performance delivery of Generative AI services.',
+            tech: ['Python', 'FastAPI', 'Docker', 'Async API', 'LLM Streaming'],
+            description: 'Architected a production-grade FastAPI backend for scaling and serving LLM applications. Implemented asynchronous streaming architectures (SSE) for real-time AI responses and integrated token usage tracking. Developed efficient prompt management systems and containerized the service with Docker for seamless horizontal scaling and high-availability.',
             icon: Sparkles,
             gradient: 'linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%)',
             github: 'https://github.com/manish860200'
         },
         {
-            title: 'Semantic Vector Search Engine',
-            tech: ['FAISS', 'Vector Databases', 'Python', 'LLMs'],
-            description: 'Developed a high-speed semantic search system utilizing FAISS for indexing millions of high-dimensional embeddings. Focused on optimizing vector retrieval latency and implementing hybrid search strategies to enable instant, relevant information retrieval for AI applications.',
+            title: 'Semantic Knowledge Engine',
+            tech: ['Python', 'FAISS', 'Vector Store', 'Semantic Search', 'Embeddings'],
+            description: 'Built an advanced semantic knowledge engine implementing hybrid search strategies for high-dimensional data. Constructed a custom ingestion pipeline to transform unstructured text into optimized vector embeddings. Focused on fine-tuning recovery accuracy and reducing search latency through advanced indexing techniques in FAISS.',
             icon: Rocket,
             gradient: 'linear-gradient(135deg, #ec4899 0%, #f472b6 100%)',
             github: 'https://github.com/manish860200'
@@ -556,9 +556,18 @@ const SinglePagePortfolio = () => {
                                 </motion.div>
                                 <h3 style={{ fontSize: '1.05rem', fontWeight: '600', marginBottom: '10px' }}>{project.title}</h3>
                                 <p style={{ color: '#a0a0a0', marginBottom: '18px', lineHeight: '1.7', fontSize: '0.88rem' }}>{project.description}</p>
-                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '20px' }}>
+                                <div style={{
+                                    display: 'flex',
+                                    flexWrap: 'wrap',
+                                    gap: '8px',
+                                    marginBottom: '20px',
+                                    background: 'rgba(255, 255, 255, 0.03)',
+                                    padding: '12px',
+                                    borderRadius: '12px',
+                                    border: '1px solid rgba(255, 255, 255, 0.05)'
+                                }}>
                                     {project.tech.map((tech, i) => (
-                                        <motion.span key={i} className="badge" whileHover={{ scale: 1.1 }} style={{ fontSize: '0.7rem', padding: '6px 12px' }}>{tech}</motion.span>
+                                        <motion.span key={i} className="badge" whileHover={{ scale: 1.05 }} style={{ fontSize: '0.65rem', padding: '5px 10px', whiteSpace: 'nowrap' }}>{tech}</motion.span>
                                     ))}
                                 </div>
                                 <motion.a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-secondary ripple"
