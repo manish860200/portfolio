@@ -442,7 +442,7 @@ const SinglePagePortfolio = () => {
                         </div>
 
                         {/* Image Content */}
-                        <div style={{ flex: '1', minWidth: '320px', position: 'relative', display: 'flex', justifyContent: 'center', perspective: '1000px' }}>
+                        <div className="about-image-container" style={{ flex: '1', minWidth: '320px', position: 'relative', display: 'flex', justifyContent: 'center', perspective: '1000px' }}>
                             {/* Animated Glowing Aura */}
                             <motion.div
                                 animate={{
@@ -497,7 +497,7 @@ const SinglePagePortfolio = () => {
                             </motion.div>
 
                             {/* Floating Icons */}
-                            <div style={{ position: 'absolute', bottom: '40px', left: '-20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                            <div className="social-icons-vertical" style={{ position: 'absolute', bottom: '40px', left: '-20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
                                 {[
                                     { icon: Github, href: 'https://github.com/manish860200' },
                                     { icon: Linkedin, href: 'https://linkedin.com/in/manish-parmar-8a30b33a6' }
