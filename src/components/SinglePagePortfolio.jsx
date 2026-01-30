@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, useScroll, AnimatePresence } from 'framer-motion';
 import {
     ArrowRight, TrendingUp, Mail, Linkedin, Github, ExternalLink,
-    Brain, Code2, Layers, Sparkles, Bot, Rocket, Send, CheckCircle, AlertCircle,
+    Brain, Sparkles, Bot, Rocket, Send, CheckCircle, AlertCircle,
     ChevronDown, Menu, X, Star
 } from 'lucide-react';
 
