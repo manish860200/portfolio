@@ -364,6 +364,21 @@ const SinglePagePortfolio = () => {
                     <p className="section-subtitle">Passionate about building intelligent systems</p>
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '28px' }}>
+                        <motion.div className="glass-card" variants={cardHoverVariants} initial="rest" whileHover="hover" whileTap="tap"
+                            style={{ padding: '0', overflow: 'hidden', aspectRatio: '1/1', position: 'relative' }}>
+                            <img src="/profile.jpg" alt="Manish Parmar"
+                                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                            />
+                            <div style={{
+                                position: 'absolute', bottom: 0, left: 0, right: 0,
+                                padding: '16px', background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)',
+                                color: 'white'
+                            }}>
+                                <p style={{ fontSize: '0.8rem', fontWeight: '500', margin: 0 }}>Manish Parmar</p>
+                                <p style={{ fontSize: '0.7rem', opacity: 0.8, margin: 0 }}>Gen AI Engineer</p>
+                            </div>
+                        </motion.div>
+
                         <motion.div className="glass-card" variants={cardHoverVariants} initial="rest" whileHover="hover" whileTap="tap" style={{ padding: '32px' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
                                 <div className="icon-wrapper" style={{ width: '44px', height: '44px', background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}>
