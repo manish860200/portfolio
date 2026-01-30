@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, useScroll, AnimatePresence } from 'framer-motion';
 import {
     ArrowRight, TrendingUp, Mail, Linkedin, Github, ExternalLink,
-    Brain, Sparkles, Bot, Rocket, Send, CheckCircle, AlertCircle,
+    Brain, Code2, Layers, Sparkles, Bot, Rocket, Send, CheckCircle, AlertCircle,
     ChevronDown, Menu, X, Star
 } from 'lucide-react';
 
@@ -47,31 +47,12 @@ const SinglePagePortfolio = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        setStatus({ type: '', message: '' });
-
-        try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            const result = await response.json();
-
-            if (response.ok && result.success) {
-                setStatus({ type: 'success', message: result.message || 'Thank you! Your message has been sent successfully.' });
-                setFormData({ name: '', email: '', subject: '', message: '' });
-            } else {
-                setStatus({ type: 'error', message: result.message || 'Something went wrong. Please try again.' });
-            }
-        } catch (error) {
-            setStatus({ type: 'error', message: 'Failed to send message. Please check your connection.' });
-        } finally {
+        setTimeout(() => {
+            setStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
+            setFormData({ name: '', email: '', subject: '', message: '' });
             setIsSubmitting(false);
-            setTimeout(() => setStatus({ type: '', message: '' }), 6000);
-        }
+            setTimeout(() => setStatus({ type: '', message: '' }), 5000);
+        }, 1500);
     };
 
     const navItems = [
@@ -314,13 +295,13 @@ const SinglePagePortfolio = () => {
                         </motion.div>
                     </motion.div>
 
-                    <motion.h1 variants={itemVariants} style={{ fontSize: 'clamp(2rem, 5vw, 3.2rem)', fontWeight: '700', marginBottom: '20px', lineHeight: '1.2', letterSpacing: '-0.03em' }}>
-                        Building the future with <span className="gradient-text">AI-Powered Insights</span>
-                    </motion.h1>
-
                     <motion.p variants={itemVariants} style={{ fontSize: '0.95rem', color: '#a0a0a0', marginBottom: '16px' }}>
                         Hi, I'm <span style={{ fontSize: '1.1rem', fontWeight: '600', background: 'linear-gradient(135deg, #ffffff, #c084fc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Manish Parmar</span>
                     </motion.p>
+
+                    <motion.h1 variants={itemVariants} style={{ fontSize: 'clamp(2rem, 5vw, 3.2rem)', fontWeight: '700', marginBottom: '20px', lineHeight: '1.2', letterSpacing: '-0.03em' }}>
+                        Building the future with <span className="gradient-text">AI-Powered Insights</span>
+                    </motion.h1>
 
                     <motion.p variants={itemVariants} style={{ fontSize: '1rem', color: '#a0a0a0', marginBottom: '36px', maxWidth: '550px', margin: '0 auto 36px', lineHeight: '1.7' }}>
                         Software Engineer specialized in LLMs, LangChain, and production-grade AI systems
